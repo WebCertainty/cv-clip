@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV CLIP</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>CV CLIP</h1>
+        <p class="subtle">Research notes into Clairvoyance</p>
+      </header>
+
+      <section class="panel">
+        <div class="row">
+          <label for="noteTitle">Note title</label>
+          <div class="title-row">
+            <input id="noteTitle" type="text" placeholder="Untitled clipping note" />
+            <button id="usePageTitle" type="button">Use page title</button>
+          </div>
+          <p class="hint">If you leave it blank, CV CLIP will fall back to the placeholder title.</p>
+        </div>
+        <div class="row">
+          <label for="folderPath">Folder</label>
+          <select id="folderPath"></select>
+        </div>
+        <div class="row">
+          <label for="refStyle">Referencing</label>
+          <select id="refStyle">
+            <option value="none">None (default)</option>
+            <option value="apa7">APA-7</option>
+            <option value="harvard">Harvard</option>
+          </select>
+        </div>
+        <div class="buttons">
+          <button id="refreshBridge" type="button">Check bridge</button>
+          <button id="captureSelection" type="button">Add current selection</button>
+          <button id="newNote" type="button">New note</button>
+          <button id="saveNote" type="button">Save note</button>
+        </div>
+        <div id="titleNudge" class="nudge hidden" aria-live="polite">
+          <p>You’re about to save with the default placeholder title.</p>
+          <div class="buttons">
+            <button id="saveWithPlaceholder" type="button">Save anyway</button>
+            <button id="editTitleNow" type="button">Edit title</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <label for="noteBody">Current note body</label>
+        <textarea id="noteBody" rows="18"></textarea>
+      </section>
+
+      <section class="panel">
+        <h2>Status</h2>
+        <pre id="statusText">Loading...</pre>
+      </section>
+    </main>
+
+    <script src="../shared/bridge-client.js"></script>
+    <script src="../shared/title-logic.js"></script>
+    <script src="index.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,161 @@
+/* ── CV theme variables ──────────────────────────────────────────────────
+   Applied by index.js via /theme on init. Fallbacks ensure the panel is
+   usable even before the theme loads or if the bridge is offline.
+   ──────────────────────────────────────────────────────────────────────── */
+:root {
+  --bg-primary:    #1e1e2e;
+  --bg-secondary:  #181825;
+  --bg-tertiary:   #24243e;
+  --bg-hover:      #313244;
+  --bg-active:     #89b4fa;
+  --text-primary:  #cdd6f4;
+  --text-secondary:#a6adc8;
+  --text-muted:    #6c7086;
+  --accent:        #89b4fa;
+  --accent-hover:  #b4d0fa;
+  --border:        #313244;
+  --border-light:  #45475a;
+  --border-focus:  #89b4fa;
+  --error:         #f38ba8;
+  --success:       #a6e3a1;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.app {
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.subtle {
+  margin: 4px 0 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.row {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.title-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 1px solid var(--border-light);
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+button:hover {
+  background: var(--bg-hover);
+  border-color: var(--accent);
+}
+
+button:active {
+  background: var(--bg-active);
+  color: var(--bg-primary);
+}
+
+textarea,
+input,
+select {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: border-color 0.15s;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--border-focus);
+}
+
+select option {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 240px;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+  font-family: Consolas, monospace;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.hint {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.nudge {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--bg-tertiary) 88%, var(--accent) 12%);
+}
+
+.nudge p {
+  margin: 0 0 8px 0;
+  color: var(--text-secondary);
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,14 @@
+{
+  "name": "cv-clip",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local-first Clairvoyance web clipper architecture spike.",
+  "scripts": {
+    "bridge:start": "node bridge/server.js",
+    "bridge:test": "node tests/bridge.smoke.js",
+    "bridge-client:test": "node tests/bridge-client.behavior.js",
+    "title:test": "node tests/title-logic.behavior.js",
+    "extension:check": "node scripts/check-extension.js",
+    "test": "npm run extension:check && npm run bridge:test && npm run bridge-client:test && npm run title:test"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "CV CLIP",
+  "version": "1.0.0",
+  "description": "Clip selections into Clairvoyance Notes through a local bridge.",
+  "permissions": ["storage", "contextMenus", "sidePanel", "activeTab", "tabs", "scripting"],
+  "host_permissions": ["http://127.0.0.1/*"],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "side_panel": {
+    "default_path": "sidepanel/index.html"
+  },
+  "commands": {
+    "capture-selection-to-cv-clip": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y"
+      },
+      "description": "Capture the current page selection into CV CLIP"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/selection.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Open CV CLIP"
+  }
+}

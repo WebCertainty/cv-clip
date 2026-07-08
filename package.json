@@ -5,6 +5,10 @@
   "description": "Local-first Clairvoyance web clipper architecture spike.",
   "scripts": {
     "bridge:start": "node bridge/server.js",
+    "bridge:status": "node scripts/bridge-control.js status",
+    "bridge:up": "node scripts/bridge-control.js start",
+    "bridge:stop": "node scripts/bridge-control.js stop",
+    "bridge:restart": "node scripts/bridge-control.js restart",
     "bridge:test": "node tests/bridge.smoke.js",
     "bridge-client:test": "node tests/bridge-client.behavior.js",
     "title:test": "node tests/title-logic.behavior.js",

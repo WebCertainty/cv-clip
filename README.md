@@ -57,10 +57,27 @@ Open PowerShell:
 ```powershell
 cd path\to\cv-clip
 npm install
+npm run bridge:up
+```
+
+The bridge listens on `127.0.0.1:43119`, confines writes to `%APPDATA%\clairvoyance\notes`, and creates `notes\clips` automatically when needed.
+
+Bridge lifecycle helpers:
+
+```powershell
+npm run bridge:status
+npm run bridge:up
+npm run bridge:stop
+npm run bridge:restart
+```
+
+For foreground/debug mode, use:
+
+```powershell
 npm run bridge:start
 ```
 
-Leave this terminal running while you test. The bridge listens on `127.0.0.1:43119`, confines writes to `%APPDATA%\clairvoyance\notes`, and creates `notes\clips` automatically when needed.
+Leave that terminal running while you test.
 
 To check the bridge manually:
 
@@ -116,7 +133,7 @@ npm install
 Start the local bridge:
 
 ```powershell
-npm run bridge:start
+npm run bridge:up
 ```
 
 Load the extension during development:
@@ -138,8 +155,11 @@ Load the extension during development:
 ## Commands
 
 ```powershell
+npm run bridge:status
+npm run bridge:up
+npm run bridge:stop
+npm run bridge:restart
 npm run extension:check
-npm run bridge:start
 npm run bridge:test
 npm run bridge-client:test
 npm run title:test
@@ -148,7 +168,7 @@ npm test
 
 ## Troubleshooting
 
-- **Side panel says bridge is offline:** make sure `npm run bridge:start` is still running in PowerShell.
+- **Side panel says bridge is offline:** run `npm run bridge:status`, then `npm run bridge:up` or `npm run bridge:restart`.
 - **No note appears:** check `%APPDATA%\clairvoyance\notes\clips`, then rerun `npm test` to verify bridge writes still work.
 - **Extension does not appear after Load unpacked:** confirm you selected the `extension` folder, not the repo root.
 - **Chrome behaves oddly:** close all Chrome windows and retry from `chrome://extensions`; Chrome may reuse an existing profile/session and ignore some launch assumptions.

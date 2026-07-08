@@ -20,6 +20,11 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [1.0.0] — 2026-07-08 — MVP Baseline
 
 ### Added
+- Windows bridge lifecycle helpers:
+  - `npm run bridge:status`
+  - `npm run bridge:up`
+  - `npm run bridge:stop`
+  - `npm run bridge:restart`
 - Manifest V3 extension scaffold:
   - side panel UI
   - content script for selected-text capture
